@@ -1,0 +1,37 @@
+[
+  {
+    "name": "karlos",
+    "age": 25,
+    "id": 1
+  },
+  {
+    "name": "Ahmed",
+    "age": 33,
+    "id": 2
+  },
+  {
+    "name": "ali",
+    "age": 24,
+    "id": 3
+  },
+  {
+    "name": "emaaam",
+    "age": 33,
+    "id": 4
+  },
+  {
+    "name": "lara",
+    "age": 18,
+    "id": 5
+  },
+  {
+    "name": "mazen",
+    "age": 19,
+    "id": 6
+  },
+  {
+    "name": "nasim",
+    "age": 25,
+    "id": 7
+  }
+]
