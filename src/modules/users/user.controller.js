@@ -1,6 +1,7 @@
 import userModel from "../../../db/models/user.model.js";
 import bcrypt from 'bcrypt'
 import sendOurEmail from "../../utility/sendEmail.js";
+import jwt from "jsonwebtoken";
 const signUp=async (req,res)=>{
 await userModel.insertMany(req.body)
 sendOurEmail(req.body.email)
@@ -14,7 +15,10 @@ if(!foundedUser||!bcrypt.compareSync(req.body.password,foundedUser.password)){
 if(!foundedUser.isConfirmed){
     return res.status(400).json({message:"you should verify your account"})
 }
-res.status(200).json({message:"success"})
+jwt.sign({id:foundedUser.id,role:foundedUser.role}, 'mosfet', function(err, token) {
+    console.log(token);
+    res.status(200).json({message:"success",token})
+  });
 }
 const verifyAccount=async (req,res)=>{
     const user = await userModel.findOne({email:req.params.email})

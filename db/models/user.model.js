@@ -17,6 +17,11 @@ const userSchema =new mongoose.Schema({
     OTBCodeExpiry: {
         type: Date,
         default: () => new Date(Date.now() + 15 * 60 * 1000) // 15 minutes in milliseconds
+    },
+    role:{
+        type: String,
+        enums:["user","admin"],
+        default:"user"
     }
 },{
     timestamps:true,
